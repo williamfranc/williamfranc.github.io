@@ -1,0 +1,29 @@
+html, body,div,img {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 35vh;
+    margin: auto;
+}
+
+
+section {
+    margin: 5vh auto 0 auto;
+    width: auto;
+    height: 60vh;   
+}
+
+section img
+{
+    margin: -10px 0 -10px 0;
+}
+
+@media screen and (min-aspect-ratio: 5/3)
+{
+
+header {
+}
+    
+}
