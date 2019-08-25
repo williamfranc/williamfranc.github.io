@@ -16,14 +16,6 @@ section {
     height: 60vh;   
 }
 
-section img
-{
-    margin: -10px 0 -10px 0;
-}
-
-@media screen and (min-aspect-ratio: 5/3)
-{
-
 header {
 }
     
