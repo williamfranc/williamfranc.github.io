@@ -28,7 +28,6 @@ header menu
     position: absolute;
     top: 15px;
     right: 30px;
-
 }
 
 header a
@@ -60,6 +59,9 @@ a{
     color: black;
 }
 
+a:hover{
+    color: red;
+}
 
 body
 {
