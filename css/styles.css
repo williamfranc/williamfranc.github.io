@@ -38,22 +38,31 @@ header a
     transition-duration:0.2s;
 }
 
-
-.underline
-{
-    border-bottom: 4px solid;
-    color: red;
+menu a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
 }
 
-ul, li
+menu a:hover{
+    border-bottom: 3px solid red;
+    color: black;
+}
+
+menu ul, menu li
 {
 	display: inline
 }
 
-a
-{
-	text-decoration: none;
-	color: black;
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: red;
 }
 
 
