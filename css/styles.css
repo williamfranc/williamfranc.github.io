@@ -28,7 +28,6 @@ header menu
     position: absolute;
     top: 15px;
     right: 30px;
-
 }
 
 header a
@@ -55,7 +54,6 @@ menu ul, menu li
 }
 
 
-
 a{
     text-decoration: none;
     color: black;
@@ -64,7 +62,6 @@ a{
 a:hover{
     color: red;
 }
-
 
 body
 {
@@ -190,11 +187,6 @@ footer
 .indexfooter
 {
     top:300vh;
-}
-
-.aboutfooter
-{
-  top:100vh;
 }
 
 .experiencesfooter
