@@ -346,7 +346,7 @@ article h3, h4
   
 }
 
-/* *********************** preentation *********************** */
+/* *********************** presentation *********************** */
 
 .presentation
 {
@@ -423,6 +423,7 @@ article h3, h4
 	color:#CF0000;
 }
 
+
  @media screen and (max-width : 800px ){ 	
 
 	.cadre_item
@@ -433,6 +434,32 @@ article h3, h4
 	}
 	
 } 
+
+  /* ************* Fonctionnement  Contacter **************** */
+
+.contacter
+{
+	margin: 50px 20%;
+}
+
+.contacter h3
+{
+	padding-bottom: 50px;
+}
+
+.contacter a
+{
+	color: white;
+	padding: 10px;
+	border : 1px solid #87D3FA;
+	border-radius: 15px;
+}
+
+.contacter a:hover
+{
+	background-color: #87D3FA;
+	color: black;
+}
 
 
   /* *********************** Portfolio ********************** */
