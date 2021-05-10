@@ -1,0 +1,695 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300);
+
+html
+{
+}
+
+body
+{
+    font-family: 'Lato', sans-serif;
+	margin:0;
+}
+
+header
+{
+    position: fixed;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+	box-shadow: 0 0 10px rgba(100,100,100,0.8);
+}
+
+ h1, h2, h3, h4
+{
+	color:white;
+	text-align: center;
+	margin: 0px;
+	padding-top: 0px;
+}
+
+ /* *********************** NAVIGATION *********************** */
+
+#nav .logo_header
+{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 60px;
+}
+
+#nav .titre_header
+{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+}
+
+#nav_menu
+{
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+#nav_menu a
+{
+    text-decoration: none;
+    color: black;
+    transition-property: all;
+    transition-duration:0.2s;
+}
+
+#nav_menu a:hover
+{
+    border-bottom: 3px solid red;
+    color: red;
+	
+}
+
+#nav_menu ul,  #nav_menu li
+{
+	display: inline;
+	padding: 5px;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+article a
+{
+    text-decoration: none;
+    color: #87D3FA;
+}
+
+a:hover
+{
+    color: #CF000;
+}
+
+.nav 
+{
+  	display: flex;
+  	width: 100%;
+}
+
+#nav_hamburger_icone,
+#nav_responsive_menu 
+{
+  	display: none;
+}
+
+
+@media screen and (max-width : 800px ){
+	/* hide classic menu */
+  #nav_menu 
+	{
+  	display: none;
+	}
+  /* disable horizontal scrolling  */
+	#root 
+	{
+    position: relative;
+    overflow-Y: hidden;
+  	}
+
+	#nav_responsive_menu 
+	{
+    display: block;
+    position: absolute;
+    margin: 0;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    transform-origin: 0% 0%;
+    transform: translate(200%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  	}
+	
+	 #nav_responsive_menu ul 
+	{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 0;
+    right: 0;
+    top: 80px;
+    width: 100vw;
+    height: 100vh;
+    padding: 80px 0 0;
+    text-align: center;
+    background: #87D3FA;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+  	}
+
+  #nav_responsive_menu li 
+	{
+    padding: 20px 0;
+	font-size: 1.5em;
+	text-transform: uppercase;
+ 	}
+	
+  #nav_responsive_menu.open 
+	{
+    transform: none;
+    position: fixed;
+  	}
+	
+/* ******************** HAMBURGER icone ******************** */
+
+  /* define size and position of the hamburger link */
+  #nav_hamburger_icone 
+	{
+    display: block;
+	position: absolute;
+    top: 25px;
+    right: 20px;
+    width: 10px;
+    width: 35px;
+ 
+    z-index: 100;
+
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  	}
+
+  /* define the style (size, color, position, animation, ...) of the 3 spans */
+  #nav_hamburger_icone span 
+	{
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    margin-bottom: 5px;
+
+    background: black;
+    border-radius: 3px;
+
+    z-index: 100;
+    opacity: 1;
+		
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  	}
+
+  /* set the 3 spans position to look like a hamburger */
+  #nav_hamburger_icone span:nth-child(1) 
+	{
+    top: 0px;
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+  	}
+  #nav_hamburger_icone span:nth-child(2) 
+	{
+    top: 12px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  	}
+  #nav_hamburger_icone span:nth-child(3) {
+    top: 24px;
+    -webkit-transform-origin: left bottom;
+    -moz-transform-origin: left bottom;
+    -o-transform-origin: left bottom;
+    transform-origin: left bottom;
+  	}
+
+  /* the first span rotates 45° \ */
+  #nav_hamburger_icone.open span:nth-child(1) 
+	{
+    width: 110%;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  	}
+
+  /* the second span disappears */
+  #nav_hamburger_icone.open span:nth-child(2) 
+	{
+    width: 0%;
+    opacity: 0;
+  	}
+
+  /* the last span rotates -45° / */
+  #nav_hamburger_icone.open span:nth-child(3) 
+	{
+    width: 110%;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  	}
+
+}
+
+/* ************************** FRONT ************************* */
+
+.front
+{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+	background-color:#87D3FA;
+	text-align: center;
+}
+
+
+.logo_front
+{
+	padding-top: 25vh;
+	width: 90vw;
+	max-width: 50vh;
+}
+
+.front div
+{
+	height: 100vh;
+	width: 100%;
+	text-align: center;
+	display: table;
+}
+
+.front div article
+{
+	vertical-align:middle;
+	display: table-cell;
+}
+
+.front h2
+{	
+	color: black;
+}
+
+.front h3
+{	
+	margin: 0px 20%;
+	line-height: 1.5;
+	color: black;
+}
+
+
+
+/* ************************** back ************************** */
+
+.back
+{
+    position: absolute;
+	top:100vh;
+    width: 100%;
+	text-align: center;
+	background-color: black;
+}
+
+.back article
+{
+	padding: 40px 0 50px 0;
+}
+
+article h1
+{
+    font-weight: 300;
+    font-size: 2.5em;
+    opacity:1;
+}
+
+article h2
+{
+	font-weight: 300;
+	font-size: 2.5em;
+	opacity: 1;
+	margin: 10px;
+	color:#87D3FA;
+}
+
+article h3, h4
+{
+	font-weight: 500;
+	font-size: 1em;
+	padding: 5px;
+  
+}
+
+/* *********************** presentation *********************** */
+
+.presentation
+{
+	margin :0px 15%;
+}
+
+.photo_presentation
+{
+    height:200px;
+    padding-top: 0px;
+    padding-bottom:0px;
+    max-height: 30vw;
+	border-radius: 50%;
+}
+
+.presentation h4
+{
+	margin-top: 12px;
+	text-align: justify;
+}
+
+@media screen and (max-width : 800px ){ 
+	
+	.presentation
+	{
+		margin :0px 40px;
+	}
+}
+/* *************** Fonctionnement / Materiel ***************** */
+
+.cadre
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.logo_cadre
+{
+	width: 100px;
+	height: 100px;
+}
+
+.cadre_item
+{
+	width:20%;
+	margin:10px;
+	padding:10px; 
+}
+
+.cadre_item h2
+{
+	font-size: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0px;
+	padding: 20px 0px;
+}
+
+.cadre_item h3
+{
+	font-size: 1em;
+	margin: 0px;
+	text-align: justify;
+}
+
+.cadre_item_center h3
+{
+	text-align: center;
+}
+
+.cadre_item h4
+{
+	font-size: 0.8em;
+	margin: 15px 0px 0px 0px;
+	text-align: center;
+	text-decoration: underline;
+	text-transform: uppercase;
+	color:#CF0000;
+}
+
+
+ @media screen and (max-width : 800px ){ 	
+
+	.cadre_item
+	{
+	width: 100%;
+	vertical-align: center;
+	margin: auto 50px 30px;
+	}
+	
+} 
+
+  /* ************* Fonctionnement  Contacter **************** */
+
+.contacter
+{
+	margin: 30px 20% 0px;
+}
+
+.contacter h3
+{
+	padding-bottom: 50px;
+}
+
+.contacter a
+{
+	color: white;
+	padding: 10px;
+	border : 1px solid #87D3FA;
+	border-radius: 15px;
+}
+
+.contacter a:hover
+{
+	background-color: #87D3FA;
+	color: black;
+}
+
+  /* *************** Materiel logo bandeau * **************** */
+
+article.bandeau
+{
+	padding: 0px 50px;
+}
+
+.bandeau
+{
+	background-color: white;
+	margin-bottom: -15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.logo_bandeau
+{
+	width: 50%;
+}
+
+.bandeau_item
+{
+	margin: 5px 10px;
+}
+
+  /* *********************** Portfolio ********************** */
+
+#filtre
+{
+	list-style: none;
+	color:white;
+}
+
+ul#filtre, #filtre li
+{
+	padding-left: 0px;
+	padding-top: 15px;
+}
+
+#filtre ul, #filtre li
+{
+	display: inline;
+}
+
+#filtre li span 
+{
+	padding:5px 20px;
+	text-decoration:none;
+	cursor: pointer;
+}
+
+#filtre li span:hover 
+{
+	background-color: #87D3FA;
+	border-radius: 15px;
+}
+
+#filtre li span.active 
+{
+	background-color: #87D3FA;
+	border-radius: 15px;
+}
+
+@media screen and (max-width : 800px ){	
+	ul#filtre, #filtre li
+	{
+	display: block;
+	margin-bottom: 20px;
+	}
+}
+
+#portfolioliste .portfolio 
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	margin:1%;
+	display:none;
+	overflow:hidden;
+}
+
+.portfolio-wrapper 
+{
+	overflow:hidden;
+	position: relative ;
+	cursor:pointer;
+	border: 2px solid white;
+}
+
+.portfolio img 
+{
+	width:100%;
+	height: 100%;
+    -webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+	margin-bottom: -4px;
+}
+	
+.portfolio .label
+{
+	position: absolute;
+	width: 100%;
+	height:20%;
+	bottom:-20%;
+    -webkit-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition:         all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.portfolio .label-bg 
+{
+	background-color: #87D3FA;
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top:0;
+	left:0;
+}
+	
+.portfolio .label-texte 
+{
+	color:black;
+	position: relative;
+	z-index:500;
+	top:25%;
+}
+			
+.portfolio .texte-categorie 
+{
+	display:block;
+	font-size:10px;
+	margin-top: 5px;
+}
+	
+.portfolio:hover .label
+{
+	bottom:0;
+}
+
+
+ /* ************************ Projet ************************ */
+
+.black
+{
+	background-color: black;
+}
+.projet
+{
+	margin :0px 20%;
+}
+
+
+/* ******************** mentions légales ******************** */
+
+.mentions-lg h3
+{
+	text-align: center;
+}
+
+/* ************************* Footer ************************ */
+
+.footer
+{
+	background-color:#87D3FA;
+	width: 100%;
+	height: 120px;
+	text-align: center;
+	margin: 15px 0px 0px 0px;
+	
+}
+
+
+.footer .reseaux-sociaux a
+{
+	padding:15px;
+}
+
+.reseaux-sociaux
+{
+	padding:15px 0;
+	text-align: center;
+}
+
+.icone-social
+{
+width: 35px;
+height: 35px;
+border-radius: 50%;
+border: 1.5px solid white;
+}
+
+#instagram:hover {
+background-color: #5851db;
+}
+
+#facebook:hover {
+background-color: #4169E1;
+}
+
+#linkedin:hover {
+background-color: #0e76a8;
+}
+
+#youtube:hover {
+background-color: #c4302b;
+}
+
+
+.footer h2
+{
+	font-size: 0.8em;
+	color:black;
+}
+
+.footer h3
+{
+	font-size: 0.5em;
+	margin: 10px 0px 0px 0px;
+}
+
+.footer h3 a:hover
+{
+	color: white;
+}
+
+
+
