@@ -484,13 +484,22 @@ article.bandeau
 
 .logo_bandeau
 {
-	width: 50%;
+	width: 60%;
 }
 
 .bandeau_item
 {
-	margin: 5px 10px;
+	margin: 0px 10px;
 }
+
+ @media screen and (max-width : 800px ){ 	
+
+	.bandeau_item
+	{
+	margin: 0px -35px;
+	}
+	
+} 
 
   /* *********************** Portfolio ********************** */
 
